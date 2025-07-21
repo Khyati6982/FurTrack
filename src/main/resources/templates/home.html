@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FurTrack Clinic</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">Welcome to FurTrack 🐾</h1>
+        <p class="subtext">Track pets, owners, and consultations with ease.</p>
+
+        <nav class="nav-links">
+            <ul>
+                <li><a th:href="@{/pets}">🐶 Manage Pets</a></li>
+                <li><a th:href="@{/owners}">👤 Manage Owners</a></li>
+                <li><a th:href="@{/consultations}">🩺 Manage Consultations</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

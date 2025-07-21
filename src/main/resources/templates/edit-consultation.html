@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Consultation</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">Edit Consultation 🩺</h1>
+        <a th:href="@{/consultations}" class="nav-link">← Back to Consultation List</a>
+
+        <form th:action="@{'/consultations/edit/' + ${consultation.id}}" method="post" class="styled-form">
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" th:value="${consultation.description}" placeholder="Brief consultation notes" required>
+
+            <label for="fee">Fee (₹):</label>
+            <input type="number" name="fee" id="fee" th:value="${consultation.fee}" step="0.01" placeholder="Consultation fee" required>
+
+            <label for="status">Status:</label>
+            <select name="status" id="status" required>
+                <option value="" disabled>Select Status</option>
+                <option th:each="s : ${statuses}" th:value="${s}" th:text="${s}" th:selected="${s == consultation.status}">Status</option>
+            </select>
+
+            <button type="submit" class="submit-button">✅ Update Consultation</button>
+        </form>
+    </div>
+</body>
+</html>

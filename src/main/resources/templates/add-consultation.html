@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Consultation</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">Add a New Consultation 🩺</h1>
+        <a th:href="@{/consultations}" class="nav-link">← Back to Consultation List</a>
+
+        <form th:action="@{/consultations/add}" method="post" class="styled-form">
+
+            <label for="petId">Pet Name:</label>
+            <select name="petId" id="petId" required>
+                <option value="" disabled selected>Select Pet</option>
+                <option th:each="pet : ${pets}" th:value="${pet.id}" th:text="${pet.name}">Pet Name</option>
+            </select>
+
+            <label for="ownerId">Owner Name:</label>
+            <select name="ownerId" id="ownerId" required>
+                <option value="" disabled selected>Select Owner</option>
+                <option th:each="owner : ${owners}" th:value="${owner.id}" th:text="${owner.name}">Owner Name</option>
+            </select>
+
+            <label for="broughtBy">Brought By (if different from owner):</label>
+            <input type="text" name="broughtBy" id="broughtBy" placeholder="Name of accompanying person">
+
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" placeholder="Enter brief symptoms..." required>
+
+            <label for="fee">Fee (₹):</label>
+            <input type="number" name="fee" id="fee" step="0.01" placeholder="Consultation fee" required>
+
+            <label for="status">Status:</label>
+            <select name="status" id="status" required>
+                <option value="SCHEDULED">Scheduled</option>
+                <option value="COMPLETED">Completed</option>
+                <option value="CANCELLED">Cancelled</option>
+                <option value="NO_SHOW">No-Show</option>
+            </select>
+
+            <button type="submit" class="submit-button">➕ Add Consultation</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultation Management</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">Consultation Management 🩺</h1>
+        <div class="nav-bar">
+            <a th:href="@{/}" class="nav-link">← Back to Home</a>
+            <a th:href="@{/consultations/add}" class="nav-link highlight">➕ Add New Consultation</a>
+        </div>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pet</th>
+                    <th>Owner</th>
+                    <th>Brought By</th>
+                    <th>Description</th>
+                    <th>Fee</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="consultation : ${consultations}">
+                    <td th:text="${consultation.id}">1</td>
+                    <td th:text="${consultation.pet.name}">Whiskers</td>
+                    <td th:text="${consultation.owner.name}">Riya</td>
+                    <td th:text="${consultation.broughtBy}">–</td>
+                    <td th:text="${consultation.description}">Vaccination</td>
+                    <td th:text="${consultation.fee}">500.00</td>
+                    <td th:text="${consultation.status}">Scheduled</td>
+                    <td th:text="${consultation.date}">2025-07-18</td>
+                    <td>
+                        <a th:href="@{'/consultations/edit/' + ${consultation.id}}" class="action-link edit">✏️ Edit</a>
+                        |
+                        <a th:href="@{'/consultations/delete/' + ${consultation.id}}"
+                           onclick="return confirm('Are you sure you want to delete this consultation?');"
+                           class="action-link delete">🗑️ Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

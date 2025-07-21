@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Pet</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">Edit Pet 🐾</h1>
+        <a th:href="@{/pets}" class="nav-link">← Back to Pet List</a>
+
+        <form th:action="@{'/pets/edit/' + ${pet.id}}" method="post" class="styled-form">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" th:value="${pet.name}" placeholder="Update pet name" required>
+
+            <label for="species">Species:</label>
+            <input type="text" name="species" id="species" th:value="${pet.species}" placeholder="Dog, Cat, etc." required>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" th:value="${pet.age}" placeholder="Pet's age" required>
+
+            <button type="submit" class="submit-button">Update Pet</button>
+        </form>
+    </div>
+</body>
+</html>

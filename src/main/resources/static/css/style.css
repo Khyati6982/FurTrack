@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    background-color: #edf1f7; 
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    width: 100%;
+}
+
+.main-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.subtext {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+
+/* Navigation Bar */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Home Page Navigation Cleanup */
+.nav-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.nav-links a,
+.nav-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #2E8B57;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link.highlight {
+    background-color: #e9fce9;
+    border: 1px solid #c0e6c0;
+}
+
+.nav-links a:hover,
+.nav-link:hover {
+    background-color: #dff7df;
+}
+
+.nav-links a:visited,
+.nav-link:visited {
+    color: #2E8B57;
+    text-decoration: none;
+}
+
+/* Form Styling */
+.styled-form {
+    margin-top: 20px;
+    background-color: #fbfcfd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.styled-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+
+.styled-form input,
+.styled-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.styled-form input:focus,
+.styled-form select:focus {
+    border-color: #2E8B57;
+    outline: none;
+    box-shadow: 0 0 4px rgba(46, 139, 87, 0.2);
+}
+
+/* Buttons */
+.submit-button {
+    background-color: #2E8B57;
+    color: white;
+    padding: 10px 16px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #246c45;
+}
+
+/* Table Styling */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-top: 20px;
+    background-color: #fbfcfd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #444;
+}
+
+.styled-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Action Links */
+.action-link,
+.action-link:visited,
+.action-link:hover {
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.action-link.edit {
+    color: #1e90ff;
+}
+
+.action-link.delete {
+    color: #dc3545;
+}
+
+.action-link:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
